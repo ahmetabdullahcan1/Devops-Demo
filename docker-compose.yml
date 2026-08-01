@@ -1,0 +1,16 @@
+services:
+  app:
+    build: ./node-backend
+    container_name: devops-app
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: devops-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+    restart: always
