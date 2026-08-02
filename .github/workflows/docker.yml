@@ -23,7 +23,7 @@ jobs:
         run: curl -f http://localhost:80
       
       - name: Prometheus check
-        run: curl -f http://locahlost:9090/-/ready
+        run: curl -f http://localhost:9090/-/ready
 
       - name: Shutdown
         run: docker compose down
